@@ -7,9 +7,15 @@ let operator = null;
 Array.from(document.getElementsByClassName('num')).forEach((button) => {
   button.addEventListener('click', (e) => {
     if (operator) {
+      if (operand2 == '0'){
+        operand2 = '';
+      }
       operand2 += e.target.textContent;
       display.value = operand1 + operator + operand2;
     } else {
+      if (operand1 == '0'){
+        operand1 = '';
+      }
       operand1 += e.target.textContent;
       display.value = operand1;
     }
